@@ -1,7 +1,77 @@
-@import "reset.scss";
+/* Box sizing rules */
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
-@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap');
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
 
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+*::before,
+*::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
 html {
   scroll-behavior: smooth;
 }
@@ -9,7 +79,7 @@ html {
 body {
   margin: 0 auto;
   max-width: 1150px;
-  font-family: 'Heebo', sans-serif;
+  font-family: "Heebo", sans-serif;
   padding: 15px 150px 15px 150px;
 }
 
@@ -30,14 +100,13 @@ body {
   text-decoration: none;
   color: #000000;
   transition: 0.25s;
-  &:hover {
-    color: #FF6464;
-    transition: 0.25s;
-  }
+}
+.navigation__item:hover {
+  color: #FF6464;
+  transition: 0.25s;
 }
 
 /* ========== */
-
 .resume {
   margin-bottom: 70px;
 }
@@ -69,16 +138,16 @@ body {
   border-radius: 2px;
   padding: 10px 20px;
   transition: 0.25s;
-  &:hover {
-    cursor: pointer;
-    background: #ffacac;
-    transition: 0.25s;
-  }
-  &:active {
-    cursor: pointer;
-    background: #bc2a2a;
-    transition: 0.25s;
-  }
+}
+.resume__button:hover {
+  cursor: pointer;
+  background: #ffacac;
+  transition: 0.25s;
+}
+.resume__button:active {
+  cursor: pointer;
+  background: #bc2a2a;
+  transition: 0.25s;
 }
 
 .resume__button-text {
@@ -102,7 +171,6 @@ body {
 }
 
 /* ========== */
-
 .recent-posts {
   margin-bottom: 15px;
   background-image: url(assets/images/art.png);
@@ -129,7 +197,6 @@ body {
   background-color: #FFFFFF;
   box-shadow: 0px 4px 10px rgba(187, 225, 250, 0.25);
   border-radius: 4px;
-  
   display: flex;
   flex-direction: column;
   row-gap: 20px;
@@ -150,10 +217,8 @@ body {
   font-size: 18px;
   line-height: 26px;
   color: #21243D;
-
   display: flex;
   column-gap: 25px;
-
 }
 
 .recent-posts__paragraph {
@@ -164,7 +229,6 @@ body {
 }
 
 /* ========== */
-
 .featured-works {
   margin-bottom: 15px;
 }
@@ -207,7 +271,6 @@ body {
   font-size: 20px;
   line-height: 29px;
   color: #8695A4;
-
   display: flex;
   column-gap: 25px;
 }
@@ -228,7 +291,6 @@ body {
 }
 
 /* ========== */
-
 .footer {
   margin-top: 135px;
   margin-bottom: 50px;
@@ -246,37 +308,37 @@ body {
 .footer__link--facebook {
   fill: #000000;
   transition: 0.25s;
-  &:hover {
-    fill: rgb(57, 86, 147);
-    transition: 0.25s;
-  }
+}
+.footer__link--facebook:hover {
+  fill: rgb(57, 86, 147);
+  transition: 0.25s;
 }
 
 .footer__link--instagram {
   fill: #000000;
   transition: 0.25s;
-  &:hover {
-    fill: rgb(142, 75, 195);
-    transition: 0.25s;
-  }
+}
+.footer__link--instagram:hover {
+  fill: rgb(142, 75, 195);
+  transition: 0.25s;
 }
 
 .footer__link--twitter {
   fill: #000000;
   transition: 0.25s;
-  &:hover {
-    fill: rgb(28, 156, 234);
-    transition: 0.25s;
-  }
+}
+.footer__link--twitter:hover {
+  fill: rgb(28, 156, 234);
+  transition: 0.25s;
 }
 
 .footer__link--linkedin {
   fill: #000000;
   transition: 0.25s;
-  &:hover {
-    fill: rgb(10, 99, 188);
-    transition: 0.25s;
-  }
+}
+.footer__link--linkedin:hover {
+  fill: rgb(10, 99, 188);
+  transition: 0.25s;
 }
 
 .footer__copyright {
@@ -284,5 +346,50 @@ body {
 }
 
 /* ========== */
+@media (max-width: 1024px) {
+  body {
+    padding: 15px;
+    margin: 15px;
+  }
+  .header {
+    margin-bottom: 50px;
+  }
+  /* ========== */
+  .resume {
+    margin-bottom: 60px;
+  }
+  .resume__left {
+    align-items: center;
+  }
+  .resume__img-john {
+    background-position: 10px 25px;
+    margin-bottom: 40px;
+  }
+  /* ========== */
+  .recent-posts {
+    padding-bottom: 10px;
+  }
+  .recent-posts__heading {
+    display: flex;
+    justify-content: center;
+  }
+  .recent-posts__textbox {
+    margin-bottom: 20px;
+    margin-left: -5px;
+    margin-right: -5px;
+  }
+  .recent-posts__textbox-heading {
+    font-size: 22px;
+    line-height: 30px;
+  }
+  .recent-posts__date-theme {
+    font-size: 16px;
+  }
+  /* ========== */
+  .featured-works__heading {
+    display: flex;
+    justify-content: center;
+  }
+}
 
-@import "media-query.scss";
+/*# sourceMappingURL=styles.css.map */
